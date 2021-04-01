@@ -1,0 +1,15 @@
+# Whatever IDE you're using, make sure you don't commit your config files
+# personal preference, but no one wants your IDE settings :) 
+.idea
+src/Template/.idea
+.vs
+.vscode
+
+# Remove bin and obj from the remote repo
+src/Template/bin
+src/Template/obj
+
+# If you create a repo from this, uncomment appsettings.json 
+# so you don't push your token :) 
+
+# src/Template/appsettings.json
