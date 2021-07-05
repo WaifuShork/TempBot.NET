@@ -1,23 +1,26 @@
-# Discord.NET Template
+# Temp Bot
 
-<img src="https://i.imgur.com/yg3BYh4.png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="120" height="120">
+Temp Bot serves to provide a super easy to use boiler plate codebase for a Discord.NET bot, with support for: 
 
-This repository is a very simple up-to-date template which you can use for your own Discord.NET bot. 
-
-* Support for **logging**;
-* **Advanced** configuration options thanks to Discord.Addons.Hosting;
-* Completely **up-to-date** and being maintained;
-* Contains premade commands such as **ping**, **echo** and **math**.
-
+- Logging
+- Dependency Injection
+- Premade Extension Methods
+- Discord.Addons.Hosting fully setup
+- Serilog setup and ready to use with a file logger included
+- Examples and easy to follow code that's heavily commented
 
 ## Config
 
-The template comes with a `appsettings.json` which can be used to provide the prefix and token of your bot.
+As of right now the bot comes with a basic `appsettings.json` that allows you to configure your token and prefix
+
+TODO:
+- Permissions
+- Rules Cache
+- Rudimentary Database
 
 ```
 {
-   "prefix": "!",
    "token": "token"
+   "prefix": "!",
 }
 ```
