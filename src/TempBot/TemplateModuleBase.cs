@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Serilog;
@@ -9,7 +10,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Discord.Addons.Interactive;
 
-namespace TempBot.Services
+namespace TempBot
 {
     // You don't need to keep this class included, I just use it to extend functionality of InteractiveBase,
     // InteractiveBase is a command context built on top of ModuleBase for interactive commands, I've defined
@@ -40,12 +41,13 @@ namespace TempBot.Services
             return await NextMessageAsync(true, true, TimeSpan.FromSeconds(seconds));
         }
 
-        // Useful for sending a mesasge that you want to delete in X seconds
+        // Useful for sending a message that you want to delete in X seconds
         protected async Task TimedDeletionAsync(string contents, bool isTTS, Embed embed, TimeSpan timeSpan)
         {
             try
             {
                 var message = await Context.Channel.SendMessageAsync(contents, isTTS, embed);
+                // Task.Delay provides a non-blocking timer for delays, avoid using Thread.Sleep in asynchronous operations 
                 await Task.Delay(timeSpan);
                 await message.DeleteAsync();
             }

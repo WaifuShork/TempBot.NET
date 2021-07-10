@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/ashle/Documents/dotnet-workspace/Discord.NET-Template/src/TempBot/TempBot.csproj": {}
+    "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot\\TempBot.csproj": {}
   },
   "projects": {
-    "/home/ashle/Documents/dotnet-workspace/Discord.NET-Template/src/TempBot/TempBot.csproj": {
+    "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\TempBot.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ashle/Documents/dotnet-workspace/Discord.NET-Template/src/TempBot/TempBot.csproj",
-        "projectName": "TempBot",
-        "projectPath": "/home/ashle/Documents/dotnet-workspace/Discord.NET-Template/src/TempBot/TempBot.csproj",
-        "packagesPath": "/home/ashle/.nuget/packages/",
-        "outputPath": "/home/ashle/Documents/dotnet-workspace/Discord.NET-Template/src/TempBot/obj/",
+        "projectUniqueName": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\TempBot.Infrastructure.csproj",
+        "projectName": "TempBot.Infrastructure",
+        "projectPath": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\TempBot.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\death\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ashle/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\death\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -26,6 +26,86 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.11.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot\\TempBot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot\\TempBot.csproj",
+        "projectName": "TempBot",
+        "projectPath": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot\\TempBot.csproj",
+        "packagesPath": "C:\\Users\\death\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\death\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\TempBot.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\death\\Desktop\\Ash's Shit\\TempBot.NET\\src\\TempBot.Infrastructure\\TempBot.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -62,6 +142,20 @@
               "target": "Package",
               "version": "[2.4.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -71,10 +165,6 @@
               "version": "[5.0.1, )"
             },
             "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.Extensions.Logging": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
@@ -114,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

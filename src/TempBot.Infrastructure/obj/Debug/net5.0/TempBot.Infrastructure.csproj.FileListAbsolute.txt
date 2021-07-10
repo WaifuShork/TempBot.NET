@@ -1,0 +1,15 @@
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\TempBot.Infrastructure.deps.json
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\TempBot.Infrastructure.runtimeconfig.json
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\TempBot.Infrastructure.runtimeconfig.dev.json
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\TempBot.Infrastructure.dll
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\ref\TempBot.Infrastructure.dll
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\bin\Debug\net5.0\TempBot.Infrastructure.pdb
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.AssemblyInfo.cs
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.dll
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\ref\TempBot.Infrastructure.dll
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.pdb
+C:\Users\death\Desktop\Ash's Shit\TempBot.NET\src\TempBot.Infrastructure\obj\Debug\net5.0\TempBot.Infrastructure.genruntimeconfig.cache
