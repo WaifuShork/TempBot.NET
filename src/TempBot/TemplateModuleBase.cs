@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 using Serilog;
@@ -17,7 +16,7 @@ namespace TempBot
     // a few helper methods below that you can call from any class that inherits from TemplateModuleBase
     public abstract class TemplateModuleBase : InteractiveBase<SocketCommandContext>
     {
-        // Both of these methods provide some abstraction to the buitl in NextMessageAsync, this will 
+        // Both of these methods provide some abstraction to the built in NextMessageAsync, this will 
         // allow you to way for a user response with a timeout set in TimeSpan seconds or double
 
         // example:

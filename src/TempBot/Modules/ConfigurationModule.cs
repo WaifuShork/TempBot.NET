@@ -1,24 +1,32 @@
 ﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
-using TempBot.Common;
 using TempBot.Infrastructure;
+using TempBot.Infrastructure.Models;
+using TempBot.Infrastructure.Models.Impl;
 
 namespace TempBot.Modules
 {
     public class ConfigurationModule : TemplateModuleBase
     {
+        private readonly GuildConfigs _configs;
+        
+        public ConfigurationModule(GuildConfigs config)
+        {
+            _configs = config;
+        }
+        
         [Command("prefix")]
         public async Task GetOrUpdatePrefixAsync(string prefix = "")
         {
             if (string.IsNullOrWhiteSpace(prefix))
             {
-                prefix = await Singletons.DbHelper.GuildConfigs.GetPrefixAsync(Context.Guild.Id);
+                prefix = await _configs.GetPrefixAsync(Context.Guild.Id);
                 await ReplyAsync($"Your prefix is: {prefix}");
                 return;
             }
 
-            await Singletons.DbHelper.GuildConfigs.UpdatePrefixAsync(Context.Guild.Id, prefix);
+            await _configs.UpdatePrefixAsync(Context.Guild.Id, prefix);
             await ReplyAsync($"Successfully updated prefix");
         }
         
@@ -27,7 +35,7 @@ namespace TempBot.Modules
         {
             if (string.IsNullOrWhiteSpace(logChannel))
             {
-                var temp = await Singletons.DbHelper.GuildConfigs.GetLogChannelAsync(Context.Guild.Id);
+                var temp = await _configs.GetLogChannelAsync(Context.Guild.Id);
                 await ReplyAsync($"Your logging channel is: <#{temp}>");
                 return;
             }
@@ -38,7 +46,7 @@ namespace TempBot.Modules
                 return;
             }
             
-            await Singletons.DbHelper.GuildConfigs.UpdateLogChannelAsync(Context.Guild.Id, logChannelId);
+            await _configs.UpdateLogChannelAsync(Context.Guild.Id, logChannelId);
             await ReplyAsync($"Successfully updated log channel");
         }
     }

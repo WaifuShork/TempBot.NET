@@ -18,7 +18,6 @@ using TempBot.Services;
 
 using Serilog;
 using Serilog.Events;
-using TempBot.Common;
 using TempBot.Infrastructure;
 using TempBot.Infrastructure.Models.Impl;
 
@@ -99,8 +98,7 @@ namespace TempBot
                     services.AddHostedService<CommandHandler>()
                             .AddHostedService<StartupService>();
                     
-                    services.AddSingleton<DbHelper>()
-                            .AddSingleton<GuildConfigs>()
+                    services.AddSingleton<GuildConfigs>()
                             .AddSingleton<InteractiveService>();
                     
                     services.AddDbContext<TemplateBotContext>();

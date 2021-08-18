@@ -9,25 +9,28 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
-using TempBot.Common;
+using Microsoft.Extensions.DependencyInjection;
+using TempBot.Infrastructure.Models.Impl;
 
 namespace TempBot.Services
 {
     public class CommandHandler : DiscordClientService
     {
         private readonly IServiceProvider _provider;
+        
         private readonly CommandService _commandService;
+        private readonly GuildConfigs _guildConfigs;
         private readonly IConfiguration _config;
         
         public CommandHandler(DiscordSocketClient client, 
                               ILogger<DiscordClientService> logger,
-                              CommandService commandService,
-                              IServiceProvider provider,
-                              IConfiguration configuration) : base(client, logger)
+                              IServiceProvider provider) : base(client, logger)
         {
-            _commandService = commandService;
             _provider = provider;
-            _config = configuration;
+
+            _guildConfigs = provider.GetRequiredService<GuildConfigs>();
+            _commandService = provider.GetRequiredService<CommandService>();
+            _config = provider.GetRequiredService<IConfiguration>();
         }
 
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
@@ -52,12 +55,12 @@ namespace TempBot.Services
             // Is the source channel from a guild? 
             if (message.Channel is IGuildChannel guildChannel)
             {
-                prefix = await Singletons.DbHelper.GuildConfigs.GetPrefixAsync(guildChannel.GuildId);
+                prefix = await _guildConfigs.GetPrefixAsync(guildChannel.GuildId);
                 if (string.IsNullOrWhiteSpace(prefix))
                 {
                     // If the returned prefix from the database is null, then we update the prefix to be '!' for future use
                     prefix = "!";
-                    await Singletons.DbHelper.GuildConfigs.UpdatePrefixAsync(guildChannel.GuildId, "!");
+                    await _guildConfigs.UpdatePrefixAsync(guildChannel.GuildId, "!");
                 }
                 
             }
