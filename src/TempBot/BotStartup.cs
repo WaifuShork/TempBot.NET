@@ -38,8 +38,11 @@ namespace TempBot
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
-                .WriteTo.Console()
-                .WriteTo.File(path, LogEventLevel.Verbose, rollingInterval: RollingInterval.Day)
+                .WriteTo.Async(cf =>
+                {
+                    cf.Console();
+                    cf.File(path, LogEventLevel.Verbose, rollingInterval: RollingInterval.Day);
+                })
                 .CreateLogger();
 
             try
@@ -62,26 +65,17 @@ namespace TempBot
 
         private static IHostBuilder CreateDefaultBuilder()
         {
-            
-            // Can optionally pass a token that's stored as an environment variable for production 
-            #if RELEASE
-            var token = Environment.GetEnvironmentVariable("TOKEN");
-            #endif
-            
             return Host.CreateDefaultBuilder()
+                .UseSerilog()
                 .ConfigureAppConfiguration(x =>
                 {
                     var configuration = new ConfigurationBuilder()
                         .SetBasePath(Directory.GetCurrentDirectory())
+                        // path, is it optional?, reload on change?
                         .AddJsonFile("appsettings.json", false, true)
                         .Build();
 
                     x.AddConfiguration(configuration);
-                })
-                .ConfigureLogging(x =>
-                {
-                    x.AddConsole();
-                    x.SetMinimumLevel(LogLevel.Debug);
                 })
                 .ConfigureDiscordHost((context, config) => 
                 {
@@ -93,7 +87,6 @@ namespace TempBot
                     };
                     
                     config.Token = context.Configuration["token"];
-
                 })
                 .UseCommandService((_, config) =>
                 {
