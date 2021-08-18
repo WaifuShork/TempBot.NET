@@ -1,8 +1,6 @@
-﻿using System.Threading.Tasks;
-using Discord;
+﻿using Discord;
 using Discord.Commands;
-using TempBot.Infrastructure;
-using TempBot.Infrastructure.Models;
+using System.Threading.Tasks;
 using TempBot.Infrastructure.Models.Impl;
 
 namespace TempBot.Modules
